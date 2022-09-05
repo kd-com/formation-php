@@ -3,7 +3,7 @@
         afficher "hello world"
 
         retourner une valeur
-     -->
+     --> 
      <?php
     //  afficher "hello world"
     //  déclaration de la fonction
