@@ -38,8 +38,9 @@
 <p>
     <?php
     include 'variable.php';
-    include 'fonction.php';
+    include 'condition.php';
     include 'boucle.php';
+    include 'fonction.php';
     ?>
 
 
