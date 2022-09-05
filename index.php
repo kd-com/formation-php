@@ -41,6 +41,7 @@
     include 'condition.php';
     include 'boucle.php';
     include 'fonction.php';
+    include 'exercice_1.php';
     ?>
 
 
