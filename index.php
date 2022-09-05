@@ -30,7 +30,7 @@
         -->
 
           <?php
-          var_dump($GLOBALS);
+        //   var_dump($GLOBALS);
           ?>
 
 </p>
@@ -41,8 +41,19 @@
     // include 'fonction.php';
     // include 'boucle.php';
     ?>
-    <p>
-    </p>
+    <!-- 
+        fonction
+        afficher "hello world"
+
+        retourner une valeur
+     -->
+     <?php
+    //  déclaration de la fonction
+     function afficher() {
+        echo "Hello World !";
+     }
+     afficher();
+     ?>
 
 
     
