@@ -40,21 +40,11 @@
     // include 'variable.php';
     // include 'fonction.php';
     // include 'boucle.php';
+    include 'function.php';
     ?>
-    <!-- 
-        fonction
-        afficher "hello world"
+    
 
-        retourner une valeur
-     -->
-     <?php
-    //  déclaration de la fonction
-     function afficher() {
-        echo "Hello World !";
-     }
-     afficher();
      
-     ?>
 
 
     
