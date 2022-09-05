@@ -37,21 +37,10 @@
 
 <p>
     <?php
-<<<<<<< HEAD
-    // include 'variable.php';
-    // include 'fonction.php';
-    // include 'boucle.php';
-    include 'function.php';
-    ?>
-    
-
-     
-=======
     include 'variable.php';
     include 'fonction.php';
     include 'boucle.php';
     ?>
->>>>>>> e9bc6c00bb77e19b11072d7a05a979b7315f9773
 
 
     
