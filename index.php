@@ -37,11 +37,12 @@
 
 <p>
     <?php
-    include 'variable.php';
-    include 'condition.php';
-    include 'boucle.php';
-    include 'function.php';
     include 'exercice_1.php';
+    // include 'variable.php';
+    // include 'condition.php';
+    // include 'boucle.php';
+    // include 'function.php';
+    // include 'exercice_1.php';
     ?>
 
 
