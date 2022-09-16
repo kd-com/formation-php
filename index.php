@@ -37,7 +37,9 @@
 
 <p>
     <?php
-    include 'exercice_1.php';
+    // include 'exercice_1.php';
+    include 'exercice_2.php';
+
     // include 'variable.php';
     // include 'condition.php';
     // include 'boucle.php';
