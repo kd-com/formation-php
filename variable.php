@@ -45,3 +45,9 @@
     }
 
     echo"<br>";
+
+    // VARIABLE LOCALE ET GLOBALE
+$mavarglobale= "ce que je veux !"; // VARIABLE GLOBALE QUI EXISTE EN DEHORS DE LA FONCTION
+function mafonction2() {
+    $mavar="ce que je veux !"; // VARIABLE LOCALE EXISTE QUE DANS LA FONCTION
+}
