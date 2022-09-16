@@ -134,5 +134,23 @@ echo "<br>-------------------------<br>";
 // }
 // calcResultMulti($paramNb);
 
+// EXO : une fonction qui prend en parametre de valeur et qui renvoi la somme de ces valeurs.
+
+function sommevaleur($tabValeur) {
+    $resultValeur = 0;
+    
+    for ($i=0; $i<= count($tabValeur)-1; $i++) {
+        //echo $resultValeur . ' ';
+        $resultValeur = $tabValeur[$i]+$resultValeur;
+    }
+    return $resultValeur;
+
+}
+$tableauValeur = [1, 2, 3];
+echo sommevaleur($tableauValeur);
+
+
+
+
 
     ?>
