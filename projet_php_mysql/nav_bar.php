@@ -16,9 +16,17 @@
           <li class="nav-item">
             <a class="nav-link" href="ajout_produit.php">ajouter un produit</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="connexion.php">connexion</a>
-          </li>
+          <?php
+            if (isset($_SESSION['user'])) { ?>
+              <li class="nav-item">
+                    <a class="nav-link" href="deconnexion.php">Deconnexion</a>
+                </li>
+              
+              <?php } else { ?>
+                <li class="nav-item">
+                <a class="nav-link" href="connexion.php">connexion</a>
+              </li>
+                <?php } ?>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown

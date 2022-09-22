@@ -35,28 +35,34 @@ function connexUtil() {
     $mail = $_POST['mail_user'];
     $tel = $_POST['tel_user'];
     $mdp = $_POST['mdp_user'];
-    
-    $stmt = $bdd->query("SELECT * FROM `user` WHERE `mail_user` LIKE '$mail'");
+    var_dump($_POST);
+    $stmt = $bdd->query("SELECT * FROM user WHERE mail_user = '$mail'");
     while($row = $stmt->fetch()) {
         if(
             ($mail == $row['mail_user']) && (password_verify($mdp, $row['mdp_user']))
             ) {
-            echo 'ok';
+                $_SESSION['user'] = $row['mail_user'];
+                include 'fiche_user.php';
         } else {
             echo 'ko';
         }
     }
     
     }
+
+// deconnexion utilisateur
+function delog() {
+    unset($_SESSION['user']);
+}
     
 // ajout de produit
 function ajoutProduit() {
-    $bdd = appelBdd();
-
+   $bdd = appelBdd();
 $nom = $_POST['nom_produit'];
 $desc = $_POST['desc_produit'];
 $prix = $_POST['prix_produit'];
-$img = $_POST['img_produit'];
+$img = $_FILES['img_produit']['name'];
+echo $img;
 
 
 $sql = "INSERT INTO produit (id, nom_produit, desc_produit, prix_produit, img_produit)
@@ -66,7 +72,51 @@ $sql = "INSERT INTO produit (id, nom_produit, desc_produit, prix_produit, img_pr
      $nom,
      $desc,
      $prix,
-     $img,
+     $img
 
 ]);
+}
+// suppression produit
+function suppProd() {
+try {
+    $bdd = appelBdd();
+    $id = $_GET['id'];
+    
+
+    $sql = "DELETE FROM produit WHERE id=?";
+        $stmt= $bdd->prepare($sql);
+        $stmt->execute([
+            $id
+         
+    ]);
+}
+    catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+      }
+    }
+
+// afficher les produit
+function affProd() {
+    $bdd = appelBdd();
+    // 2. REQUETE SQL qui récupere les données de la table produit
+    $stmt = $bdd->query("SELECT * FROM produit");
+    $tabProd = array();
+    while($row = $stmt->fetch()) {
+        $tabProd[] = $row;
+    }
+    return $tabProd;
+
+
+}
+
+// liste utilisateur
+function affUtil() {
+    $bdd = appelBdd();
+    $stmt = $bdd->query("SELECT * FROM user");
+    $tabUser = array();
+    while($row = $stmt->fetch()) {
+        $tabUser[] = $row;
+    }
+    
+    return $tabUser;
 }

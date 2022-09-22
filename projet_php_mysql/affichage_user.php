@@ -1,23 +1,17 @@
-<?php
-    $bdd = appelBdd();
+    <?php 
+    $tabUser = affUtil();
+    //var_dump($tabUser);
     ?>
-
     <div class="container">
         <div class="row">
-            <?php
             
-             // 2. REQUETE SQL qui récupere les données de la table user
-            $stmt = $bdd->query("SELECT * FROM user");
-            
-
-            ?>
             <h3>Liste des users</h3>
             <?php
             
-            while($row = $stmt->fetch()) {
+            foreach($tabUser as $row) {
                 ?>
                 <div class="col-lg-4">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card mb-3" style="width: 18rem;">
                         
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['nom_user'];?></h5>
