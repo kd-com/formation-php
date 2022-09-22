@@ -7,14 +7,13 @@ include 'footer.php';
 ?>
 
 <?php
-inscriUtilisateur()
+ajoutProduit();
 ?>
-    <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-12 text-center">
-            <p>Merci pour votre inscription</p>
+            <p>Merci pour votre ajout</p>
             <a href="index.php" class="btn btn-primary">Retour à l'accueil</a>
         </div>
     </div>
 </div>
-

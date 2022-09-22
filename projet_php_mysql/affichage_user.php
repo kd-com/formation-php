@@ -25,7 +25,7 @@
                             <p class="card-text"><?php echo $row['tel_user'];?></p>
 
                             <div class="d-flex align-items-center">
-                                <a href="#" class="btn btn-primary">en savoir +</a>
+                                <a href="fiche_user.php?id=<?= $row['id'];?>" class="btn btn-primary">en savoir +</a>
                             </div>
                         </div>
                     </div>
