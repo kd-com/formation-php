@@ -35,6 +35,7 @@
         <input type="text" name="recherche">
         <input type="submit" value="rechercher">
     </form>
+    <p>Mot recherché
     
 </body>
 </html>

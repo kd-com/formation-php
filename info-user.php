@@ -22,6 +22,8 @@
        echo $row['email'];
     }
     ?>
+
+    <!-- faire ajout / modifier / supp sur la base -->
     
 </body>
 </html>
