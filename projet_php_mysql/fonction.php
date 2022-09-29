@@ -35,14 +35,15 @@ function connexUtil() {
     $mail = $_POST['mail_user'];
     $tel = $_POST['tel_user'];
     $mdp = $_POST['mdp_user'];
-    var_dump($_POST);
+    //var_dump($_POST);
     $stmt = $bdd->query("SELECT * FROM user WHERE mail_user = '$mail'");
     while($row = $stmt->fetch()) {
         if(
             ($mail == $row['mail_user']) && (password_verify($mdp, $row['mdp_user']))
             ) {
                 $_SESSION['user'] = $row['mail_user'];
-                include 'fiche_user.php';
+                include 'fiche_user_log.php';
+                
         } else {
             echo 'ko';
         }
@@ -120,3 +121,47 @@ function affUtil() {
     
     return $tabUser;
 }
+
+function affUtilOne($mail) {
+    $bdd = appelBdd();
+    $stmt = $bdd->query("SELECT * FROM user WHERE mail_user = '$mail'");
+    $tabUser = array();
+    while($row = $stmt->fetch()) {
+        $id = $row['id'];
+    }
+    
+    return $id;
+}
+
+function afftotalpanier() {
+    $totalpanier = 0;
+    foreach(getpanier() as $row) {
+        $totalpanier = ($row['produit'][0]['prix_produit']*$row['quantite'] + $totalpanier);
+    }
+    return $totalpanier;
+}
+
+function supquantite() {
+    $id_prod = $_GET['id'];
+    
+    // echo $id_prod;
+    if($_SESSION['tab_panier'] [$id_prod]>1) {
+        $_SESSION['tab_panier'] [$id_prod] =  $_SESSION['tab_panier'] [$id_prod]-1;
+            // echo '<br>le produit est diminué de 1';
+    } elseif($_SESSION['tab_panier'] [$id_prod]==1) {
+        unset($_SESSION['tab_panier'][$id_prod]);
+        //echo $id_prod;
+    }
+}
+function addquantite() {
+    $id_prod = $_GET['id'];
+    
+    // echo $id_prod;
+    if($_SESSION['tab_panier'] [$id_prod]>=0) {
+        $_SESSION['tab_panier'] [$id_prod] =  $_SESSION['tab_panier'] [$id_prod]+1;
+            // echo '<br>le produit est augmenté de 1';
+    } else {
+        // echo 'pas possible !';
+    }
+}
+

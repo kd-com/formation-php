@@ -1,16 +1,17 @@
 <?php
     include 'head.php';
-    include 'fonction.php';
+
     include 'nav_bar.php';
-    include 'footer.php';
+
 
 ?>
 
 <?php
-    $bdd = appelBdd();
-    $id = $_GET['id'];
-    $stmt = $bdd->query("SELECT * FROM user WHERE `id` LIKE '$id'");
-    ?>
+   $id = $_GET['id'];
+   ?>
+   <?php
+   $stmt = $bdd->query("SELECT * FROM `user` WHERE `id` LIKE '$id'");
+   ?>
 
 <div class="container">
     <div class="row">
@@ -41,3 +42,7 @@
         </div>
     </div>
 </div>
+
+<?php 
+    include 'footer.php';
+    ?>

@@ -18,7 +18,7 @@ session_start();
  include 'fonction.php';
 
 
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
  include 'connexion_bdd.php'; ?>
 
 

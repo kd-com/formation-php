@@ -21,7 +21,7 @@
                             <p class="card-text"><?php echo $row['prix_produit'];?> €</p>
                             <div class="d-flex align-items-center">
                                 <a href="page_un_produit.php?id=<?php echo $row['id'];?>" class="btn btn-primary">en savoir +</a>
-                                <a href="#" class="btn btn-secondary">ajouter au panier</a>
+                                <a href="gestion_panier.php?id=<?php echo $row['id'];?>" class="btn btn-secondary">ajouter au panier</a>
                             </div>
                         </div>
                     </div>
